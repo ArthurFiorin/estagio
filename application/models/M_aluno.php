@@ -5,6 +5,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 include_once("M_curso.php");
 include_once("M_professor.php");
 
+
 class M_aluno extends CI_Model
 {
   public function inserirAluno($ra, $idcurso, $nome, $estatus)
