@@ -30,7 +30,7 @@ class M_aluno extends CI_Model
           $dados = array('codigo' => 2, 'msg' => 'houve umm problema na inserçao na tabela de aluno');
         }
       } else {
-        $dados = array('codigo' => 8, 'msg' => 'aluno ja se encontra na base de dados');
+        $dados = array('codigo' => 8, 'msg' => 'aluno já se encontra na base de dados');
       }
     } else {
       $dados = array('codigo' => 7, 'msg' => 'curso informado nao cadastrado na base de dados');
@@ -82,6 +82,7 @@ class M_aluno extends CI_Model
 
     return $dados;
   }
+
 
   public function alterarAluno($ra, $idcurso, $nome)
   {

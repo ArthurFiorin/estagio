@@ -99,7 +99,7 @@ class Curso extends CI_Controller
     $resultado = json_decode($json);
     $lista = array(
 
-      "idcurso" => '0',
+      "idCurso" => '0',
 
       "descricao" => '0',
 
@@ -109,7 +109,7 @@ class Curso extends CI_Controller
 
     if (verificarParam($resultado, $lista) == 1) {
 
-      $this->setIdCurso($resultado->idcurso);
+      $this->setIdCurso($resultado->idCurso);
       $this->setDescricao($resultado->descricao);
       $this->setEstatus($resultado->estatus);
 
@@ -133,11 +133,11 @@ class Curso extends CI_Controller
   {
     $json = file_get_contents('php://input');
     $resultado = json_decode($json);
-    $lista = array("idcurso" => '0', "descricao" => '0');
+    $lista = array("idCurso" => '0', "descricao" => '0');
 
 
     if (verificarParam($resultado, $lista) == 1) {
-      $this->setIdCurso($resultado->idcurso);
+      $this->setIdCurso($resultado->idCurso);
       $this->setDescricao($resultado->descricao);
 
       if ($this->getIdCurso() == "" || $this->getIdCurso() == 0) {
@@ -165,11 +165,12 @@ class Curso extends CI_Controller
 
     $json = file_get_contents('php://input');
     $resultado = json_decode($json);
-    $lista = array("idcurso" => '0', "usuario" => '0', "senha" => '0');
+
+    $lista = array("idCurso" => '0', "usuario" => '0', "senha" => '0');
 
     if (verificarParam($resultado, $lista) == 1) {
 
-      $this->setIdCurso($resultado->idcurso);
+      $this->setIdCurso($resultado->idCurso);
       $usuario = $resultado->usuario;
       $senha = $resultado->senha;
 
@@ -183,7 +184,7 @@ class Curso extends CI_Controller
         $retorno = $this->M_curso->apagarCurso($this->getIdCurso(), $usuario, $senha);
       }
     } else {
-      $retorno = array('codigo' => 99, 'msg' => 'os campos vindo do frontEnd nao represntam o metodo de consulta, verifique');
+      $retorno = array('codigo' => 99, 'msg' => 'os campos vindo do frontEnd nao representam o metodo de consulta, verifique');
     }
 
     echo json_encode($retorno);
@@ -196,10 +197,10 @@ class Curso extends CI_Controller
     $json = file_get_contents('php://input');
     $resultado = json_decode($json);
 
-    $lista = array("idcurso" => '0');
+    $lista = array("idCurso" => '0');
 
     if (verificarParam($resultado, $lista) == 1) {
-      $this->setIdCurso($resultado->idcurso);
+      $this->setIdCurso($resultado->idCurso);
 
       if (trim($this->getIdCurso()) == 0) {
         $retorno = array('codigo' => 3, 'msg' => 'ID do curso nao informado');
